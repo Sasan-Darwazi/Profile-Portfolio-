@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Main Project</title>
+
+    <link rel="stylesheet" href="edit.css">
+    <script src="https://kit.fontawesome.com/499d31d226.js" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+
+
+
+    <section id="header" >
+        <div class="header main">
+            <div class="nav-bar">
+                <!-- the main div name is brand -->
+                <div class="Myname">
+                    <a href="#image"><h1><span>I</span>mage <span>E</span>ditor</h1></a>
+                </div>
+                <div class="nav-list">
+                    <div class="cake">
+                        <div class="bar">
+                    </div>
+                </div>
+                        <!-- data Att is for to display its text shadow into its behind -->
+                            <ul>
+                                <li><a href="../index.html" data-after="Home">Home</a></li>
+                                <li><a href="#section" data-after="Services">IMG Editor</a></li>
+                                <!-- <li><a href="#projects" data-after="Projects">Projects</a></li> -->
+                                <li><a href="#about" data-after="About">About</a></li>
+                                <li><a href="#contact" data-after="Contact">Contact</a></li>
+                                <!-- <img src="image/moon.png" id="moon" alt="moong"> -->
+                            </ul>
+                           
+                        
+                           
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!--Sec2 Services started-->
+
+    
+
+
+    <section id="section" id="image">
+        <div class="container">
+            <h2>Image Editor</h2>
+    
+            <!-- wrapper class -->
+            <div class="main">
+                <div class="editor-panel">
+                    <div class="filter">
+                        <label class="title">Filter</label>
+                        <div class="options">
+                            <button id="blackpoint">BlackPoint</button>
+                            <button id="vibrance">Vibrance</button>
+                            <button id="brightness">Brightness</button>
+                            <button id="saturation" class="name">Saturation</button>
+                            <button id="Inversion">Inversion</button>
+                            <button id="grayscale">Grayscale</button>
+                            
+                        </div>
+                        <div class="slider">
+                            <div class="filter-info">
+                                <p class="bright">Brightness</p>
+                                <p class="value">100%</p>
+                            </div>
+                            <input type="range" value="100" min="0" max="200">
+                        </div>
+                    </div>
+                    <div class="rotate">
+                        <label class="title">Rotate & Flip</label>
+                        <div class="options">
+                        <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+                        <button id="right" class="right"><i class="fa fa-rotate-right"></i></button>
+                        <button id="leftAndright"><i class="bx bx-reflect-vertical"></i></button>
+                        <button id="upAnddown"><i class="bx bx-reflect-horizontal"></i></button>
+                         
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-img">
+                    <img src="image-placeholder.svg" alt="preview-img" id="img">
+                </div>
+            </div>
+            <div class="handle">
+                <button class="reset">Reset Filters</button>
+                <div class="row">
+                    <input type="file" class="file-input" accept="image/*"hidden>
+                    <button class="choose-img">Choose Image</button>
+                    <button class="save-img">Save Image</button>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    
+
+
+
+
+
+
+
+    <!-- About Section Strated -->
+    
+    <section id="about">
+        <div class=" about main">
+
+            <!-- The left column is for image -->
+            <div class="col-left">
+             <div class="about-img">
+                 <img src="img/1234.jpg" alt="img">
+
+             </div>
+            </div>
+            <div class="col-right">
+               <h1 class="sec-title">
+                   About <span>ME</span>
+               </h1>
+               <h2>Front End Developer</h2>
+               <p>This is Sasan Darwazi whom developed this Protfolio that you're scrolling right now.<br>
+               </p>
+               <a download="" href="../resume.pdf" type="button" class="btn">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section is Finished -->
+
+
+    <!-- Contact Section  -->
+
+    <section id="contact">
+        <div class="contact main">
+            <div class="sec-title"><h1>Contact <span>Info</span></h1>
+            </div>
+            <div class="con-items">
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="img/phone.png" alt="phone">
+                    </div>
+                    <div class="contact-info"><h1>phone</h1>
+                    <h2>0749070050</h2>
+                    <h2>0777873587</h2>
+                </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="img/Mail.png" alt="Mail">
+                    </div>
+                    <div class="contact-info"><h1>Mail</h1>
+                    <h2>sdarwazi.1998@gmail.com</h2>
+                    <h2>sdarwazi.1998@outlook.com</h2>
+                </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="img/Address.png" alt="Address">
+                    </div>
+                    <div class="contact-info"><h1>Address</h1>
+                    <h2>Kabul,AFG</h2>
+                    <h2>Qasabah,Emirates City</h2>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section About finished -->
+
+    <section id="footer">
+        <div class="footer main">
+            <div class="Myname"><h1><span>S</span>asan  <span>D</span>arwazi</h1></div>
+            <h2>Project Completion</h2>
+            <div class="social-icon">
+                <div class="social-item">
+                    <a href="#"><img src="img/f.png" alt="facebood"></a>
+                </div>
+                <div class="social-item">
+                    <a href="#"><img src="img/i.png" alt="Instagram"></a>
+                </div>
+                <div class="social-item">
+                    <a href="#"><img src="img/t.png" alt="Twitter"></a>
+                </div>
+                <div class="social-item">
+                    <a href="#"><img src="img/y.png" alt="YouTube"></a>
+                </div>
+                
+            </div>
+            <!-- <div class="toggle-btn" id="btn"onclick="dark()"> -->
+                <!-- <span id="span">Dark</span>
+
+                <!-- <input type="hidden" id="btnhide" value="0"> -->
+            
+            <!-- <img src="image/moon.png" alt=""> </div>  -->
+            <p class="pp">Copyright &copy Sasan. All rights reserved</p>
+        </div>
+      
+    </section>
+    <!-- Footer Is Finished -->
+
+
+
+
+    <!-- this is for transition for cake -->
+
+    <script src="app.js">
+        
+        
+
+          
+     
+    </script>
+
+<!-- <script>
+    function dark(){
+        const btn = document.getElementById("btn");
+        const btnh = document.getElementById("btnhide").value;
+        if(btnh == 0){
+            btn.addEventListener('click', () => {
+                document.body.style.backgroundColor = "Black"
+            })
+
+        document.getElementById("btnhide").value=1;
+        document.getElementById("span").innerText="Dark";
+        }
+        if(btnh == 1){
+            btn.addEventListener('click', () => {
+                document.body.style.backgroundColor = "white"
+            })
+            document.getElementById("btnhide").value=0;
+            document.getElementById("span").innerText="White";
+        }
+
+
+
+
+     
+
+    }
+  
+</script> -->
+
+     <script src="./script.js"></script>
+  
+</body>
+</html>

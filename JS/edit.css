@@ -1,0 +1,1274 @@
+  
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+
+
+
+:root{
+    --backgroud-color: #fff;
+    --text-color: #555;
+    --title-color: #000;
+}
+
+body {
+    background: var(--backgroud-color);
+    color: var(--text-color);
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+
+
+/* this is for all element font-size */
+html{
+    font-size: 10px;
+    scroll-behavior:smooth;
+    /* font-family: 'Edu VIC WA NT Beginner'; */
+}
+
+
+/* this is for main div section 1 */
+.main{
+    min-height: 100vh;;
+    width:100%;
+    display: flex;
+    align-items: center;;
+    justify-content: center;
+    
+}
+
+/* THis is for img itself for width,height and fit or first shape of img */
+
+
+
+
+
+
+
+/* Header Section started */
+ 
+
+/* this is for header itself */
+#header{
+
+    position: fixed;
+
+    /* z-index is for, when the cake clicked, the hi heading will hidden */
+    z-index: 1000;
+    left:0;
+    top:0;
+
+    /* the vw is = viewport width, 1 value of 1vw is equal to 1% of the viewport width */
+    width:100vw;
+    height: auto;
+
+}
+
+/* this is for class header */
+
+#header .header{
+
+    /* vh is = viewport height. 1 value of 1vh is equal to 1% of the viewport height. */
+    min-height: 8vh;
+    background-color: rgba(12, 9, 9, .3);
+    
+}
+
+
+
+/* this is for .Myname h1 */
+#header .nav-bar .Myname h1{
+    padding:10px;
+    position: relative;
+    left:-10px;
+}
+
+
+
+/* this is for .Myname class and a tag */
+.header .Myname a{
+    
+    font-size: 3.6rem;
+    color:white;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding:20px 0;
+    font-family: 'DynaPuff', cursive;
+    
+}
+
+
+
+/* this is for .Myname span */
+#header .Myname span{
+    color:crimson;
+}
+
+
+/* this is for header nav-bar texts */
+
+.header .nav-bar{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+height: 100%;
+max-width: 1300px;
+padding:0 10px;
+}
+
+
+/* this is for nav-bar ul */
+
+#header .nav-list ul{
+list-style: none;
+position: absolute;
+background-color: rgb(31, 30,30);
+
+width:100vw;
+height: 100vh;
+left:100%;
+top:0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+z-index: 1;
+overflow: hidden;
+transition: .5s ease left;
+}
+
+
+
+
+/* this is for cake when it is get active. */
+#header .nav-list ul.active{
+    left:0%;
+}
+
+
+/* this is for nav-bar ul a */
+
+#header .nav-list ul a{
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing:.2rem ;
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+    padding: 10px;
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    
+}
+
+
+
+/* this is for  nav-list ul a:after shadow*/
+#header .nav-list ul a::after{
+
+    /* att (data-after is for shadow behind the lists */
+    content: attr(data-after); 
+    position: absolute;
+    top:50%;
+    left:50%;
+
+
+    /* this transform is for, when the cake text hovered, it will shows one shadows on its behind */
+    transform: translate(-50%, -50%);scale: 0;
+    color:rgba(240,240,255, 0.021);
+    font-size: 12rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition:.3s ease letter-spacing;
+}
+
+
+/* This is nav-list ul li:hover and a::after */
+
+#header .nav-list ul li:hover a::after{
+
+    /* this is for behind the text for every a tag */
+    transform: translate(-50%, -50%);scale: 1;
+    letter-spacing: initial;
+
+}
+
+
+
+
+
+
+/* This is for .nav-list ul li:hover a color */
+
+
+#header .nav-list ul li:hover a{
+    color:crimson;
+    transition: .25s ease;
+}
+
+
+
+/* this is for makin cake logo*/
+
+#header .cake{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border:3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+
+    /* this is for size of cake */
+    transform: scale(.8);
+    position: relative;
+    right: 20px;
+
+    /* it's for to display the cake when its opened too. */
+    z-index: 100;
+    
+}
+
+
+
+
+
+/* THis is for cake  after when its clicked;*/
+#header .cake::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border:3px solid white;
+
+    /* this for animation, which i already did code about it. */
+    animation: cake_pulse 1s ease infinite;
+
+}
+
+
+/* this is for cake bar for the middle line */
+
+#header .cake .bar{
+height: 2px;
+width: 30px;
+position: relative;
+background-color: white;
+z-index: -1;
+}
+
+
+
+
+/* this code determines the lines for the cake */
+#header .cake .bar::after,
+#header .cake .bar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left:0;
+    background-color: white;
+    transition: .3s ease ;
+    transition-property: top,bottom;
+
+}
+
+
+
+/* these are for two lines at the top and the bottom */
+#header .cake .bar::after{
+    top:8px;
+
+} 
+#header .cake .bar:before{
+  bottom:8px;
+    
+}
+
+#imgg {
+    width:30px;
+    cursor:pointer;
+    background-color: white;
+    }
+    
+    
+    #header ul{
+        flex:1;
+        text-align: center;;
+    }
+
+
+
+/* This is for activation the lines of cake */
+#header .cake.active .bar::before{
+
+    bottom: 0;
+}
+
+#header .cake.active .bar::after{
+    top:0;
+}
+
+
+#header #moon{
+    width:30px;
+    cursor: pointer;
+    position: relative;
+    top:10px;
+}
+
+.nav-bar ul {
+    /* flex: 1;
+    text-align: right;; */
+}
+
+
+#section{
+    min-height: 10vh;;
+        width:100%;
+        display: flex;
+        align-items: center;;
+        justify-content: center;
+        padding-top: 50px;
+        
+        
+    }
+    
+    
+    .container {
+        /* display: flex; */
+        /* align-items: center; */
+        justify-content: center;
+        margin: 100px auto;
+        /* margin-top: 60px; */
+        width: 800px;
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px 35px 35px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        
+        
+    }
+    
+    /* This is for container h2 === Image Editor */
+    .container h2 {
+        font-size: 3em;
+        font-weight: 500;
+    }
+    
+    
+     /* display flex for bring the whole content into inside. */
+    .container .main {
+         
+        display: flex;
+        margin: 20px 0;
+        min-height: 335px;;
+    }
+    
+    
+    .main .editor-panel {
+        width: 320px;
+        border: 1px solid #ccc;
+        padding: 15px 20px;
+        border-radius: 10px;;
+       
+        
+        /* margin-left: 20px; */
+    
+    }
+    
+    
+    /* this is for title from rotate * flip */
+    
+    .editor-panel .title {
+        display: block;
+        font-size: 25px;
+        margin-bottom:12px;
+    }
+    
+    
+    .editor-panel .options, .handle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .editor-panel  button {
+        height: 40px;
+        font-size: 16px;
+        color: #6C757D;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        background: #fff;
+        border: #aaa 1px solid;
+    }
+    
+    
+    /* This piece of code is for, turend the button's into two column. */
+    
+    .editor-panel .filter button {
+        width: calc(100% / 2 - 5px);
+        
+    }
+    
+    
+    
+    .editor-panel button:hover{
+        background-color: #f5f5f5;
+    }
+    /*  These code's lines is for. the second button color's */
+    
+    .editor-panel button:hover{
+        transition: 0.7s ease;
+        color:white;
+        background-color: crimson;
+        font-size: 1.4em;
+    
+    }
+    
+    
+    
+    
+    /* this is for slider or when the user want to increase and decrease the
+    the range of pictures */
+    
+    .filter .slider {
+        margin-top: 15px;
+    }
+    
+    /* it is sorting the filter information
+    and displayed it to flex */
+    
+    .filter .slider .filter-info {
+    display: flex;
+    color: #464646;
+    font-size: 18px;
+    justify-content: space-between;
+    
+    }
+    
+    /* This is for input or range */
+    
+    .filter .slider input {
+        width: 100%;
+        height:10px;
+        accent-color: #5372f0;
+    }
+    
+    
+    /* this is for giving margin to rotate from up */
+    
+    .main .rotate .title {
+        margin-top:50px;
+    } 
+    
+    /*This line is two turned the editor-panel into forth parts,
+     as its made cleared in the code  */
+    
+    
+    .editor-panel .rotate button {
+        
+        width: calc(100% / 4 - 3px);
+        
+    }
+    
+    
+    
+    
+    /* this is for rotate or orienting buttons. */
+    
+    .editor-panel .rotate {
+        margin-top: 20px;
+    }
+    
+    
+    /* These two code lines for hovering the righ button */
+    
+     .rotate .right{
+        background-color: transparent;
+    
+    }
+      
+    .rotate .right:hover{
+        transition: 0.6s ease;;
+        color:black;
+        background-color: crimson;
+        font-size: 1em;
+    }
+    /* .rotate button:nth-child(3),
+    .rotate button:nth-child(4)
+        {
+    font-size: 1em;
+        
+    }
+     */
+    
+    
+    
+    
+    
+    
+    
+    .main .preview-img {
+        flex-grow:1;
+        display:flex;
+        
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+       
+        
+    }
+    /* this is for itself preview img width & height  */
+    
+     .preview-img img{
+        
+        width: 100%;
+        height: 100%;;
+        /* width: 330px; */
+        object-fit: contain;
+    }
+    
+    
+    
+    /* and this is for handle design's code's */
+    
+    .handle button{
+        font-size: 1.4em;;
+        background-color: #fff;;
+        padding: 11px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+        /* margin-right:30px;  */
+    }
+    
+    
+    
+    /* this is for reset button */
+    
+    .handle .reset {
+        /* margin-left: 20px; */
+        color: #6C757D;
+        border: #6C757D 1px solid;
+        box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    
+    }
+    
+    /* This is for hovergin the mouse */
+    .handle .reset:hover{
+        text-shadow: #00000c;
+        transition: 0.8s ease;
+        color:white;
+        background-color:crimson;
+        
+    }
+    
+    
+    
+    /* this is for button which chosed image */
+    
+    .handle .choose-img {
+        /* width: 150px; */
+        
+        /* font-size: 0.9em;; */
+        color: #fff;
+        background-color: crimson;
+        border: crimson 1px solid;
+    
+       
+    
+    
+    }
+    
+    /* This is for hovering */
+    
+    .handle .choose-img:hover{
+        
+        transition: 0.8s ease;
+        color: crimson;
+        background-color: #fff;;
+        text-shadow: #00000c;
+    }
+    
+    
+    
+    /* This is for .save-img */
+    .handle .save-img{
+        
+        color: #fff;
+        background-color:#6C757D;
+        border: #6C757D 1px solid;
+        text-shadow: #00000c;
+        
+    }
+    
+    /* THis is for hovering of save-img */
+    
+    .handle .save-img:hover{
+        transition: 0.8s ease;
+        color: #fff;
+        background-color: #141414;;
+        text-shadow: #00000c;
+    
+    }
+
+
+
+
+
+
+
+
+
+/* ABout Section is Started */
+
+/* I took the flex-direction: co-reverese cuz, for mobile design */
+#about .about{
+
+    flex-direction: column-reverse; 
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+
+/* THis is for col-left */
+#about .col-left{
+    width:450px;
+    height: 770px;
+    /* margin-top: 100px; */
+}
+
+
+/* this is for img size */
+#about .about-img img{
+    
+    width:450px;
+    height: 490px;
+}
+
+
+/* this is for col-left title*/
+
+#about .about  h1{
+    text-transform: uppercase;
+    font-size: 4em;
+    margin-bottom: 10px;
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+
+}
+#about .about .sec-title  span{
+    color:rgb(207, 22, 22);
+}
+
+
+/* this is for col-right */
+
+#about .col-right{
+    width: 100%;
+}
+
+
+/* this is for col-right h2 */
+
+#about .col-right h2{
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    margin-bottom: 10px;
+}
+
+
+/* this is for col-right p */
+#about .col-right p{
+    margin-bottom: 20px;
+    font-size: 20px;;
+    
+}
+
+
+/* this is for download btn */
+
+#about .col-right .btn{
+    display: inline-block;
+    padding:10px 30px;
+    color:black;
+    background-color: transparent;
+    border: 2px solid red;
+    font-size:  2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-bottom: 50px;
+    transition: 1s ease;
+    border-radius: 5px;
+    text-decoration: none;
+    
+
+}
+
+
+/* this is for btn hover */
+#about .col-right .btn:hover{
+    color:white;
+    background-color:crimson;
+    /* border: 2px solid black; */
+}
+
+
+/* this is for img behind border position relative,cuz it isnt work with po-absolute */
+#about .col-left .about-img{
+    width: 100%;
+    height: 68%;
+    position: relative;
+    border:20px solid white;
+    margin-top: 60px;
+   
+}
+/* this is for img behind border */
+
+#about .col-left .about-img::after
+{
+    content: '';
+    position: absolute;
+    left: -33px;
+    top:19px;
+    height: 98%;
+    width: 98%;
+    border: 8px solid crimson;
+    
+    /* this is for the line behind the img */
+    z-index: -1;;
+
+}
+
+/* this is for about-img transition */
+#about .about-img img{
+    transition: 1s ease transform;
+}
+/* This is for about Hovering for every about-img img */
+
+#about .col-left:hover .about-img img{
+    transform: scale(1.1);
+}
+
+/* About Section iS finished */
+
+
+
+
+
+/* Contact Section */
+
+/* this is for contact itself */
+#contact .contact{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+#contact .sec-title {
+    margin-bottom: 30px;;
+}
+
+/* this is for contact color span */
+#contact .sec-title span{
+    color:crimson;
+    
+}
+
+
+
+
+
+/* this is for contact-items width */
+#contact .contact-items{
+    width: 100%;;
+    
+}
+
+
+/* this is for contact-item */
+#contact .contact-item{
+    width:350px;
+    /* padding:20px; */
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 0px 15px 0 #00000c; 
+    transition: .3s ease box-shadow;   
+}
+
+/* this is con-item box-shadow */
+
+#contact .contact-item:hover{
+    box-shadow: 0px 0px 5px 0 #00000c; 
+}
+
+
+/* this is for icon itself */
+
+#contact .icon{
+    width:70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* this is for .sec-title h1 */
+#contact .sec-title h1{
+    font-size: 5rem;
+}
+/* This is for con-info h1 */
+#contact .contact-info h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* this is for con-info h2 */
+#contact .contact-info h2{
+    font-size: 1.7rem;
+    padding: 3px ;
+    line-height: 2rem;;
+    font-weight:600;
+}
+
+
+/* Contact is Finished */
+
+
+
+
+/* Footer is started */
+
+/* This is for footer section backgorund-color */
+#footer {
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+
+/* this is for footer .footer */
+
+#footer .footer{
+    min-height:150px;
+    /* max-height: 200px;; */
+    flex-direction: column;
+    padding-top:50px;
+    padding-bottom: 10px;
+    
+    
+}
+
+/* this is for h1  */
+
+#footer .Myname h1{
+    text-transform: uppercase;
+    font-size: 4rem;
+    color:white;
+    font-family: 'DynaPuff', cursive;
+    margin-bottom: 20px;;
+}
+
+/* this is for h1 span color */
+#footer .Myname span{
+    color:crimson;
+
+
+}
+
+
+/* this is for h2 style */
+
+#footer h2{
+    color:white;
+    font-weight: 500;
+    font-size: 2.4rem;
+    letter-spacing: .1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* this is for social-icon */
+
+
+#footer .social-icon{
+    display: flex;
+    
+    margin-bottom: 30px;
+
+}
+
+
+
+/* this is for social-item */
+
+#footer .social-item{
+    /* height: 50px;;
+    width: 60px; */
+   
+    margin: 10px 0;
+}
+
+
+
+
+/* this is for social-item img filter or background-immage color */
+
+#footer .social-item img{
+width:60px;
+height: 60px;
+    /* this is for the color of icons. */
+    filter: grayscale(1);
+    transition: .3s ease filter;
+}
+
+
+/* This is for hovering background-image color */
+#footer .social-item:hover img{
+    filter: grayscale(0);
+}
+
+
+/* this is for footer p */
+
+#footer p{
+    color:white;
+    font-size: 1.5rem;
+    padding-bottom: 15px;;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+#footer .btn button{
+    font-size: 2rem;;
+    padding:10px;
+    border-color: rgba(74, 72, 72, 0.3);;
+    border-radius: 15px;;
+    background-color: #485563;
+    color:white;
+    font-family: 'DynaPuff', cursive;
+
+
+
+}
+
+#footer .btn button:hover{
+    background-color:#00000c;
+    
+}
+
+
+#footer .toggle-btn{
+    background: #4864ff;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#footer .toggle-btn img{
+    width: 40px;
+    margin-left: 20px;
+}
+
+#footer #span{
+    font-size: 1em;
+
+}
+/* This footer section is finished */
+
+
+
+
+
+/* Kerframes */
+
+
+/* this is for cake waves */
+@keyframes cake_pulse{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+
+
+
+/* Media Query Section */
+
+
+@media (max-width: 760px){
+    .container {
+        padding: 25px;
+    }
+
+    .container .main {
+        flex-wrap: wrap-reverse;
+    }
+
+    .main .editor-panel {
+        width: 100%;
+
+    }
+    
+    .main .preview-img {
+        width: 100%;
+         margin: 0 0 10px;
+    }
+
+
+    .editor-panel .options button{
+        font-size: 1em;
+    }
+   
+  
+   
+   
+
+   
+}
+
+@media (max-width: 500px){
+
+    /* body {
+        display: flex;;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;;
+    } */
+    .handle button{
+        width: 100%;
+        margin-bottom: 10px;
+        
+    }
+
+    
+    .handle .row {
+        width: 100%;
+        /* justify-content: center */
+    }
+
+    .editor-panel .options button{
+        font-size: 16px;
+    } 
+ 
+    
+}
+
+@media only screen and (max-width:768px){
+    .editor-panel .options button{
+        font-size: 16px;
+    }
+}
+
+/* Media for tablet */
+
+@media only screen and (min-width:768px){
+
+
+
+
+/* ABout */
+
+
+/* this for the p and the img of about to look row */
+#about .about{
+    flex-direction: row;
+   
+}
+
+
+#about .col-left{
+    width: 480px;
+    height:770px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#about .about img{
+    position:relative;
+    left:-5px;
+}
+
+#about .about .col-left .about-img::after{
+    left:-45px;
+    top:25px;
+    height: 98%;
+    width: 98%;
+    border: 10px solid crimson;
+    position: absolute;
+    left:-50px;
+   
+}
+
+
+/* this is for .col-right text */
+#about .col-right{
+    
+    /* padding: 30px; */
+    padding-left: 60px;
+    text-align: center;
+}
+
+
+
+
+
+
+/* contact */
+
+
+#contact .contact{
+    flex-direction:column;
+    padding:100px 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+    
+}
+
+
+/* this is for contact span */
+
+
+
+
+
+/* this is for contact con-items */
+#contact .con-items{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    margin:0;
+
+
+}
+
+
+
+#contact .contact-item{
+    width:30%;
+    margin: 0;;
+    flex-direction: row;
+}
+
+#contact .contact-item .icon{
+    height: 100px;
+    width: 100px;
+
+}
+
+
+
+/* this is for the middle icon size */
+#contact .contact-item .icon img{
+    object-fit: contain;
+}
+
+
+/* #contact .contact-item .contact-info{
+    width:100%; 
+     text-align: left; 
+     padding-left: 20px;;
+} */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media query for desktop */
+
+
+@media  (min-width:1200px){
+    /* header */
+    #header .cake{
+        display: none;
+    }
+    #header .Myname h1{
+        position: relative;
+        left:20px;
+    }
+    #header .nav-list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+       background-color: transparent;
+    }
+
+
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+
+
+    #header .nav-list ul li a{
+        font-size: 1.8rem;;
+      
+    }
+
+
+    #header .nav-list ul a::after{
+display: none;
+    }
+
+
+    /* Desktop */
+
+    
+}
+
+/* Finished Media Query */
+
+
+
+
